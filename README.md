@@ -78,6 +78,46 @@ The final results page displays:
 * **HTML** — Website structure
 * **CSS** — Website styling
 * **Text Files** — Storing and transferring data between the C++ and Python parts
+## How to Run
+
+To run the Smart Clinic project:
+
+1. Make sure **Python 3** is installed.
+2. Install Flask:
+
+```bash
+pip install flask
+```
+
+3. Make sure **MSYS2 UCRT64** is installed with a C++ compiler.
+4. Open the project folder in **MSYS2 UCRT64**.
+5. Compile the C++ program:
+
+```bash
+g++ final.cpp -o final.exe
+```
+
+6. Run the Flask application using the Python executable installed on your computer:
+
+```bash
+python final.py
+```
+
+If the `python` command is not recognized, use the full path to the Python executable installed on your computer:
+
+```text
+"C:\Path\To\Python\python.exe" final.py
+```
+
+7. Open the local Flask address shown in the terminal, usually:
+
+```text
+http://127.0.0.1:5000
+```
+
+For the current prototype, enter data for **5 patients**. After the fifth patient is submitted, the C++ program processes the patient data, calculates the urgency scores, sorts the patients by priority, and generates the results displayed on the results page.
+
+The patient limit can be increased later by modifying the patient limit in the code.
 
 ## Project Goal
 
