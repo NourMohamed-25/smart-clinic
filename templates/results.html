@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Clinic - Results</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='final.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+    <h1>Smart Clinic</h1>
+ <p class="subtitle"> Patient Priority & Appointment Results</p>
+ <div class="result">
+<h2>Patient Results</h2>
+<table>
+  <tr>
+    <th>Patient</th>
+    <th>Priority Score</th>
+    <th>Appointment</th>
+                </tr>
+
+{% for patient in result %}
+ <tr>
+ <td>{{ patient.name }}</td>
+ <td>{{ patient.score }}</td>
+ <td>{{ patient.time }}</td>
+                </tr>
+  {% endfor %}
+
+    </table>
+
+    </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> Smart Clinic</title>
+    
+    
+<link rel="stylesheet" href="{{ url_for('static', filename='final.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Smart Clinic</h1>
+        <p class="subtitle"> Patient Priority & Appointment System </p>
+        <div class="form-card">
+        <h2>Patient Data</h2>
+        <form action="/" method="POST" onsubmit="return checkData()">
+        <label for="p_name">Patient Name</label>
+        <input  type="text" id="p_name" name="name1" placeholder="Enter patient name" ><label for="age">Patient Age</label>
+        <input type="number" id="age" name="age1" placeholder="Enter patient age">
+        <label for="symptoms">Symptoms</label>
+        <input type="text" id="symptoms" name="symptoms1" placeholder="Enter symptoms">
+        <label for="start_time">Available From</label>
+        <input type="time" id="start_time" name="start_time1">
+        <label for="end_time">Available Until</label>
+        <input  type="time"  id="end_time" name="end_time1">
+        <button type="submit"> Save data</button>
+       </form>
+        </div>
+        </div>
+    <script>
+
+        function checkData() {
+            let patientName = document.getElementById("p_name").value;
+            let age = document.getElementById("age").value;
+            let symptoms = document.getElementById("symptoms").value;
+            let startTime = document.getElementById("start_time").value;
+            let endTime = document.getElementById("end_time").value;
+if (patientName == "" || age == "" || symptoms == "" || startTime == "" || endTime == "") {
+                    alert("Please complete all patient information!");
+                return false;
+            }
+            return true;
+        }
+
+    </script>
+
+</body>
+
+</html>
